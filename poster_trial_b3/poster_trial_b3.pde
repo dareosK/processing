@@ -7,7 +7,7 @@ PGraphics buffer;
 
 PImage img;
 PImage img2;
-PFont avenir;
+PFont sfns;
 
 void setup() {
   size(900, 900);
@@ -16,12 +16,12 @@ void setup() {
   pg2 = createGraphics(586, 810);
   buffer = createGraphics(586, 810);
   // load the image
-  img = loadImage("0Copy.jpg");
+  img = loadImage("q.jpg");
   img2 = loadImage("03_01_Break_Off_F_04.jpg");
   // the image is probably too big
   img.resize(586, 810);
   // defines 1000 as the maximum font size
-  avenir = createFont("AvenirNextCond.ttc", 1000);
+  sfns = createFont("SFNSDisplayCondensed-Black.otf", 1000);
 }
 
 void draw() {
@@ -62,9 +62,9 @@ void draw() {
   imageMode(CENTER);
   image(buffer, width/2, height/2);
   
-  rec();
+  //rec();
   
-  if (frameCount == 360) {
-    exit();
-  }
+  //if (frameCount == 460) {
+  //  exit();
+  //}
 }

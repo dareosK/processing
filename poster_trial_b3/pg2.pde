@@ -13,10 +13,10 @@ void drawPg2() {
     pg2.pop();
     
     // Sets Typography
-    pg2.textFont(avenir);
+    pg2.textFont(sfns);
     pg2.textAlign(CENTER, CENTER);
-    pg2.textSize(400);
-    pg2.fill(#111111);
+    pg2.textSize(14);
+    pg2.fill(#f1f1f1);
     
     // Displays Type + wave
     String txt = "<3";
@@ -25,7 +25,7 @@ void drawPg2() {
     float txtWave = map(sin(radians(frameCount/2)), -1, 1, -textWidth/2, textWidth/2);
     
     pg2.push();
-      pg2.translate(0, pg.height/7-40);
+      pg2.translate(0, pg.height/8-70);
       //we already translating the position of the text (line 39), 
       //so we will position it at 0 0
       pg2.text(txt, 300, 0);

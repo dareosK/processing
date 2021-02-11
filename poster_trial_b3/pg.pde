@@ -13,9 +13,9 @@ void drawPg() {
     pg.pop();
     
     // Sets Typography
-    pg.textFont(avenir);
+    pg.textFont(sfns);
     pg.textAlign(CENTER, CENTER);
-    pg.textSize(800);
+    pg.textSize(700);
     pg.fill(#f1f1f1);
     
     // Displays Type + wave
