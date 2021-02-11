@@ -6,6 +6,7 @@ PGraphics pg2;
 PGraphics buffer;
 
 PImage img;
+PImage img2;
 PFont avenir;
 
 void setup() {
@@ -16,7 +17,7 @@ void setup() {
   buffer = createGraphics(586, 810);
   // load the image
   img = loadImage("0Copy.jpg");
-  img = loadImage("03_01_Break_Off_F_04.jpg");
+  img2 = loadImage("03_01_Break_Off_F_04.jpg");
   // the image is probably too big
   img.resize(586, 810);
   // defines 1000 as the maximum font size
@@ -26,39 +27,28 @@ void setup() {
 void draw() {
   background(0);
   
-  pg.beginDraw();
-    pg.background(#111111);
-    pg.imageMode(CENTER);
+  drawPg();
+  drawPg2();
+  
+  buffer.beginDraw();
+    buffer.background(#f1f1f1);
     
-    // Displays Image
-    pg.push();
-      pg.translate(pg.width/2, pg.height/2);
-      float imgWave = map(sin(radians(frameCount)), -1, 1, 1, 3);
-      pg.scale(imgWave);
-      pg.image(img,0,0);
-    pg.pop();
+    // Whenever you want to work with the pixels on a PGraphics 
+    // instance, you need to first convert them to images. 
+    // pg.get(); takes the pixels of a PGraphics and places them on an PImage object!
+    PImage i1 = pg.get();
+    PImage i2 = pg2.get();
     
-    // Sets Typography
-    pg.textFont(avenir);
-    pg.textAlign(CENTER, CENTER);
-    pg.textSize(800);
-    pg.fill(#f1f1f1);
     
-    // Displays Type + wave
-    String txt = "BELOW THREE";
-    float textWidth = pg.textWidth(txt);
+    // creates a 2D grid
+    for (int x=0; x < pg.width; x++){
+      for (int y=0; y < pg.height; y++){
+      
+      }
+    }
     
-    float txtWave = map(tan(radians(frameCount/2)), -1, 1, textWidth/2, textWidth/110);
-    
-    pg.push();
-      pg.translate(0 + txtWave, pg.height/2-40);
-      //we already translating the position of the text (line 39), 
-      //so we will position it at 0 0
-      pg.text(txt, 300, 0);
-    pg.pop();
-    
-  pg.endDraw();
+  buffer.endDraw();
   
   imageMode(CENTER);
-  image(pg, width/2, height/2);
+  image(pg2, width/2, height/2);
 }
