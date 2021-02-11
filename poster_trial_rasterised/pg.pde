@@ -22,7 +22,7 @@ void drawPg() {
     String txt = "BELOW THREE";
     float textWidth = pg.textWidth(txt);
     
-    float txtWave = map(tan(radians(frameCount/2)), -1, 1, textWidth/2, textWidth/10);
+    float txtWave = map(tan(radians(frameCount/2)), -1, 1, textWidth/2, textWidth/100);
     
     pg.push();
       pg.translate(0 + txtWave, pg.height/2-40);

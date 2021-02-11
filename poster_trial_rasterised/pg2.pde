@@ -7,7 +7,7 @@ void drawPg2() {
     // Displays Image
     pg2.push();
       pg2.translate(pg.width/2, pg.height/2);
-      float imgWave = map(sin(radians(frameCount*3)), -1, 1, 0.6, 2);
+      float imgWave = map(sin(radians(frameCount*3)), -1, 1, 2, 0.6);
       pg2.scale(imgWave);
       pg2.image(img2,0,0);
     pg2.pop();
@@ -16,13 +16,13 @@ void drawPg2() {
     pg2.textFont(avenir);
     pg2.textAlign(CENTER, CENTER);
     pg2.textSize(800);
-    pg2.fill(#f1f1f1);
+    pg2.fill(#111111);
     
     // Displays Type + wave
-    String txt = "BELOW THREE";
+    String txt = "<3";
     float textWidth = pg.textWidth(txt);
     
-    float txtWave = map(tan(radians(frameCount/2)), -1, 1, textWidth/2, textWidth/100);
+    float txtWave = map(tan(radians(frameCount/2)), -1, 1, -textWidth/2, textWidth/2);
     
     pg2.push();
       pg2.translate(0 + txtWave, pg.height/2-40);
