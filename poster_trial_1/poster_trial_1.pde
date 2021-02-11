@@ -16,6 +16,7 @@ void setup() {
   buffer = createGraphics(586, 810);
   // load the image
   img = loadImage("0Copy.jpg");
+  img = loadImage("03_01_Break_Off_F_04.jpg");
   // the image is probably too big
   img.resize(586, 810);
   // defines 1000 as the maximum font size
