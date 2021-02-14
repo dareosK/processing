@@ -8,6 +8,7 @@ PGraphics buffer;
 PImage img;
 PImage img2;
 PFont sfns;
+PFont avenir;
 
 void setup() {
   size(900, 900);
@@ -16,16 +17,17 @@ void setup() {
   pg2 = createGraphics(586, 810);
   buffer = createGraphics(586, 810);
   // load the image
-  img = loadImage("q.jpg");
-  img2 = loadImage("03_01_Break_Off_F_04.jpg");
+  img = loadImage("11.jpg");
+  img2 = loadImage("14.jpg");
   // the image is probably too big
   img.resize(586, 810);
   // defines 1000 as the maximum font size
   sfns = createFont("SFNSDisplayCondensed-Black.otf", 1000);
+  avenir = createFont("Avenir.ttc", 1000);
 }
 
 void draw() {
-  background(0);
+  background(255);
   
   drawPg();
   drawPg2();
@@ -46,7 +48,7 @@ void draw() {
       for (int y=0; y < pg.height; y++){
         color c1 =i1.get(x,y);
         color c2 =i2.get(x,y);
-        float wave = map(sin(radians(frameCount + x*0.3 + y*0.3)), -1, 1, 0, 1);
+        float wave = map(sin(radians(frameCount + x*0.6 + y*0.3)), -1, 1, 0, 1);
         color c3 = lerpColor(c1, c2, wave);
         
         //// To make it grayscale, fill the buffer with the c3's brightness value
@@ -62,9 +64,9 @@ void draw() {
   imageMode(CENTER);
   image(buffer, width/2, height/2);
   
-  //rec();
+  rec();
   
-  //if (frameCount == 460) {
-  //  exit();
-  //}
+  if (frameCount == 360) {
+    exit();
+  }
 }

@@ -13,9 +13,9 @@ void drawPg() {
     pg.pop();
     
     // Sets Typography
-    pg.textFont(sfns);
+    pg.textFont(avenir);
     pg.textAlign(CENTER, CENTER);
-    pg.textSize(700);
+    pg.textSize(230);
     pg.fill(#f1f1f1);
     
     // Displays Type + wave
@@ -25,7 +25,7 @@ void drawPg() {
     float txtWave = map(tan(radians(frameCount/2)), -1, 1, textWidth/2, textWidth/100);
     
     pg.push();
-      pg.translate(0 + txtWave, pg.height/2-40);
+      pg.translate(0 + txtWave, pg.height/2+260);
       //we already translating the position of the text (line 39), 
       //so we will position it at 0 0
       pg.text(txt, 300, 0);

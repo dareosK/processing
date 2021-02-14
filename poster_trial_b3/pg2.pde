@@ -7,15 +7,15 @@ void drawPg2() {
     // Displays Image
     pg2.push();
       pg2.translate(pg.width/2, pg.height/2);
-      float imgWave = map(sin(radians(frameCount*3)), -1, 1, 2, 0.6);
+      float imgWave = map(sin(radians(frameCount)), -1, 1, 2, 1);
       pg2.scale(imgWave);
       pg2.image(img2,0,0);
     pg2.pop();
     
     // Sets Typography
-    pg2.textFont(sfns);
+    pg2.textFont(avenir);
     pg2.textAlign(CENTER, CENTER);
-    pg2.textSize(14);
+    pg2.textSize(30);
     pg2.fill(#f1f1f1);
     
     // Displays Type + wave
