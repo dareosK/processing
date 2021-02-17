@@ -1,10 +1,3 @@
-/*
-
- Channel Shift Image Glitching Processing v1.1
- datamoshing.com | 2016
- 
- */
-
 PImage sourceImg;
 PImage targetImg;
 
